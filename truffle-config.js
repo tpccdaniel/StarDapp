@@ -46,21 +46,21 @@ module.exports = {
         // tab if you use this network and you must also set the `host`, `port` and `network_id`
         // options below to some value.
         //
-        development: {
-            host: "127.0.0.1",     // Localhost (default: none)
-            port: 8545,            // Standard Ethereum port (default: none)
-            // port: 7545,            // Standard Ethereum port (default: none)
-            // network_id: "5777",       // Any network (default: none)
-            network_id: "4447",       // Any network (default: none)
-        },
+        // development: {
+        //     host: "127.0.0.1",     // Localhost (default: none)
+        //     port: 8545,            // Standard Ethereum port (default: none)
+        //     // port: 7545,            // Standard Ethereum port (default: none)
+        //     // network_id: "5777",       // Any network (default: none)
+        //     network_id: "4447",       // Any network (default: none)
+        // },
         goerli: {
-            provider: () => new HDWalletProvider(mnemonic, `https://optimism-goerli.infura.io/v3/${infuraKey}`),
-            network_id: 5,
-            gas: 2470000000,
-            // gasPrice:
+            provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraKey}`),
+            network_id: "*",
+            gas: 3000000,
             confirmations: 2,
-            timeoutBlocks: 200,
-            // skipDryRun: true
+            timeoutBlocks: 99999999999999999999999999999,
+            // networkCheckTimeout: 99999999999999999999999999999999,
+            skipDryRun: true
         },
 
         // Another network with more advanced options...
@@ -114,7 +114,7 @@ module.exports = {
 
     // Set default mocha options here, use special reporters etc.
     mocha: {
-        timeout: 100000
+        // timeout: 100000
     },
 
     // Configure your compilers
