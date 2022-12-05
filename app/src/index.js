@@ -12,11 +12,14 @@ const App = {
     try {
       // get contract instance
       const networkId = await web3.eth.net.getId();
+      console.log(networkId);
       const deployedNetwork = starNotaryArtifact.networks[networkId];
+      console.log(deployedNetwork);
       this.meta = new web3.eth.Contract(
         starNotaryArtifact.abi,
         deployedNetwork.address,
       );
+      console.log(this.meta);
 
       // get accounts
       const accounts = await web3.eth.getAccounts();
@@ -41,7 +44,10 @@ const App = {
 
   // Implement Task 4 Modify the front end of the DAPP
   lookUp: async function (){
-
+    const { lookUptokenIdToStarInfo } = this.meta.methods;
+    const id = document.getElementById("lookid").value;
+    const name = await lookUptokenIdToStarInfo(id).call();
+    App.setStatus("Star name is " + name + ".");
   }
 
 };
@@ -58,6 +64,8 @@ window.addEventListener("load", async function() {
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     App.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"),);
   }
+
+  console.log("loaded");
 
   App.start();
 });

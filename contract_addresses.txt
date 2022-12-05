@@ -1,0 +1,55 @@
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+> Network name:    'develop'
+> Network id:      4447
+> Block gas limit: 6721975
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xcdf6b6b85efce5f335982352d94c702bd09974ee354e6942addfb90d49139d5c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0692c7dC6bb6e8fb04687C8ACa45b1529c52E891
+   > account:             0x283AC41304212c221dd8Cb2879600C11227785AF
+   > balance:             88.77716
+   > gas used:            236902
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00473804 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00473804 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing 'StarNotary'
+   ----------------------
+   > transaction hash:    0xca05c3e0952fd728585143771a8f1c639d647b0717e4fd65d4c263eafcd5d11c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xd431F9d7f403fbF2BA79feF3572e98079f50904f
+   > account:             0x283AC41304212c221dd8Cb2879600C11227785AF
+   > balance:             88.73278672
+   > gas used:            2218664
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04437328 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.04437328 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.04911132 ETH
+
